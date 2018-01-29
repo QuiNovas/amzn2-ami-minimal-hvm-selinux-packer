@@ -1,0 +1,1 @@
+# amzn2-ami-minimal-hvm-selinux-packer
