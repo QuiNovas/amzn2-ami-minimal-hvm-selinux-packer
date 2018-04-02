@@ -1,0 +1,9 @@
+module quinovas-selinux 1.0;
+
+require {
+	type chkpwd_t;
+	class capability dac_read_search;
+}
+
+#============= chkpwd_t ==============
+allow chkpwd_t self:capability dac_read_search;
