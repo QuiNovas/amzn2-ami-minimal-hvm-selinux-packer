@@ -2,8 +2,16 @@ module quinovas-selinux 1.0;
 
 require {
 	type chkpwd_t;
+	type systemd_logind_t;
+	type systemd_tmpfiles_t;
 	class capability dac_read_search;
 }
 
 #============= chkpwd_t ==============
 allow chkpwd_t self:capability dac_read_search;
+
+#============= systemd_logind_t ==============
+allow systemd_logind_t self:capability dac_read_search;
+
+#============= systemd_tmpfiles_t ==============
+allow systemd_tmpfiles_t self:capability dac_read_search;
