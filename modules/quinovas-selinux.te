@@ -2,13 +2,19 @@ module quinovas-selinux 1.0;
 
 require {
 	type chkpwd_t;
+	type init_t;
+	type irqbalance_t;
 	type systemd_logind_t;
 	type systemd_tmpfiles_t;
 	class capability dac_read_search;
+	class process2 nnp_transition;
 }
 
 #============= chkpwd_t ==============
 allow chkpwd_t self:capability dac_read_search;
+
+#============= init_t ==============
+allow init_t irqbalance_t:process2 nnp_transition;
 
 #============= systemd_logind_t ==============
 allow systemd_logind_t self:capability dac_read_search;
